@@ -1,0 +1,16 @@
+CREATE TABLE users(  
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    phone_number VARCHAR(13) NOT NULL
+);
+
+CREATE TABLE album(  
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    subtitle VARCHAR(100) NOT NULL,
+    owner VARCHAR(100) NOT NULL,
+    thumbnail VARCHAR(100) NOT NULL,
+    date DATE NOT NULL
+);
