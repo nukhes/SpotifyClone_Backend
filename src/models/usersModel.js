@@ -8,7 +8,11 @@ const getUsers = async () => {
 const addUser = async (user) => {
   const { name, email, password, number } = user;
 
-  const queryValues = `'${name}', '${email}', '${password}', '${number}'`;
+  const cleanup = (value) => {
+    return value;
+  }
+
+  const queryValues = `'${name}', '${cleanup(email)}', '${cleanup(password)}', '${cleanup(number)}'`;
   const query = `INSERT INTO users(name, email, password, phone_number) VALUES (${queryValues})`;
 
   const [createdUser] = await connection.execute(query);
